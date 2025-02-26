@@ -11,7 +11,7 @@ document.getElementById('login-btn').addEventListener('click', function (event){
    if(mobileNumber.length === 11){
     
     if(convertedPinNum === 1234){
-       window.location.href = "./html-files/main.html"
+       window.location.href = "main.html"
     }
     else{
         alert('Invalid Pin')
