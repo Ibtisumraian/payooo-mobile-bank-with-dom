@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- DaisyUi CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- fav icon -->
+    <link rel="icon" type="image/x-icon" href="../assets/Group.png">
+    <title>Payoo MFS</title>
+</head>
+<body class="bg-black">
+    <section class="bg-slate-100 max-w-lg min-h-screen mx-auto px-6">
+        <header>
+            <nav class="flex justify-between items-center py-6">
+                <div>
+                    <img src="../assets/Group.png" alt="" class="w-14">
+                </div>
+                <div>
+                    <h1 class=" bg-blue-100 font-bold text-2xl border-[2px] rounded-lg p-1">$ <span class="font-bold text-2xl" id="main-balance">4500</span></h1>
+                <p>Available Balance</p>
+                </div>
+                <button class="btn btn-active" id="log-out">Log Out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                
+            </nav>
+            <hr>
+        </header>
+
+        <main >
+            <section class="mt-6">
+                <div>
+                    <h1 class="font-bold text-2xl">Welcome to Payooo!</h1>
+                <p>Enjoy easy and convenient financial services with us. Cashout charge is low and affordable, ensuring you get the most value for your money.</p>
+                </div>
+    
+                <div class="grid grid-cols-3 gap-4 mt-4">
+                <!-- card 1 -->
+                    <div id="add-money" class="flex flex-col justify-center items-center py-4 border-[2px] border-gray-300 rounded-xl ">
+                        <img src="../assets/wallet1.png" alt="">
+                        <h1>Add Money</h1>
+                    </div>
+    
+                    <!-- card 2 -->
+                    <div id="cash-out" class="flex flex-col justify-center items-center py-4 border-[2px] border-gray-300 rounded-xl">
+                        <img src="../assets/send1.png" alt="">
+                        <h1>Cashout</h1>
+                    </div>
+    
+                    <!-- card 3 -->
+                    <div id="transfer-money" class="flex flex-col justify-center items-center py-4 border-[2px] border-gray-300 rounded-xl">
+                        <img src="../assets/money1.png" alt="">
+                        <h1>Transfer Money</h1>
+                    </div>
+    
+                    <!-- card 4 -->
+                    <div id="get-bonus" class="flex flex-col justify-center items-center py-4 border-[2px] border-gray-300 rounded-xl">
+                        <img src="../assets/bonus1.png" alt="">
+                        <h1>Get Bonus</h1>
+                    </div>
+    
+                    <!-- card 5 -->
+                    <div id="pay-bill" class="flex flex-col justify-center items-center py-4 border-[2px] border-gray-300 rounded-xl">
+                        <img src="../assets/purse1.png" alt="">
+                        <h1>Pay Bill</h1>
+                    </div>
+    
+                    <!-- card 6 -->
+                    <div id="transactions" class="flex flex-col justify-center items-center py-4 border-[2px] border-gray-300 rounded-xl">
+                        <img src="../assets/transaction1.png" alt="">
+                        <h1>Transactions</h1>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Add Money section -->
+             <section id="add-money-box">
+                    
+                <div class="hero  ">
+                    <div class="hero-content  flex-col lg:flex-row-reverse w-full">
+                     
+                      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+                          <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Select A Bank</span>
+                              </label>
+                            <select class="select select-bordered w-full max-w-xs " required>
+                                <option disabled selected>Select Bank</option>
+                                <option>Bkash</option>
+                                <option>Nagad</option>
+                                <option>DBBL</option>
+                              </select>
+
+                            <label class="label">
+                              <span class="label-text">Bank Acount Number</span>
+                            </label>
+                            <input   type="number" placeholder="Enter 11 digit acount number" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text" >Amount to Add</span>
+                            </label>
+                            <input id="amount" type="number" placeholder="Add Amount to Deposit" class="input input-bordered" required />
+                            <label class="label">
+                                <span class="label-text" >Pin Number</span>
+                              </label>
+                            <input id="add-pin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" required />
+                            <!-- <label class="label">
+                              <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                            </label> -->
+                          </div>
+                          <div class="form-control mt-6">
+                            <button class="btn btn-primary" id="add-money-btn" >Add Money</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+             </section>
+
+             <!-- cash out section -->
+             <section id="cashout-box">
+              <div class="hero  ">
+                  <div class="hero-content  flex-col lg:flex-row-reverse w-full">
+                   
+                    <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                      <form class="card-body">
+                        <div class="form-control">
+                        
+                          <label class="label">
+                            <span class="label-text">Bank Acount Number</span>
+                          </label>
+                          <input   type="number" placeholder="Enter 11 Digit Number" class="input input-bordered" required />
+                        </div>
+                        <div class="form-control">
+                          <label class="label">
+                            <span class="label-text" >Amount to Add</span>
+                          </label>
+                          <input id="" type="number" placeholder="Add Amount To Withdraw " class="input input-bordered" required />
+                          <label class="label">
+                              <span class="label-text" >Pin Number</span>
+                            </label>
+                          <input id="" type="password" placeholder="Enter 4 Digit Pin Number" class="input input-bordered" required />
+                          <!-- <label class="label">
+                            <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                          </label> -->
+                        </div>
+                        <div class="form-control mt-6">
+                          <button class="btn btn-primary" id="" >Withdraw Money</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+           </section>
+
+           <!-- transfer money section -->
+           <section id="transfer-money-box">
+            <div class="hero  ">
+                <div class="hero-content  flex-col lg:flex-row-reverse w-full">
+                 
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                      
+                        <label class="label">
+                          <span class="label-text">Bank Acount Number</span>
+                        </label>
+                        <input   type="number" placeholder="Enter 11 Digit Number" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text" >Amount to Add</span>
+                        </label>
+                        <input id="" type="number" placeholder="Enter Amount To Transfer " class="input input-bordered" required />
+                        <label class="label">
+                            <span class="label-text" >Pin Number</span>
+                          </label>
+                        <input id="" type="password" placeholder="Enter 4 Digit Pin Number" class="input input-bordered" required />
+                       
+                      </div>
+                      <div class="form-control mt-6">
+                        <button class="btn btn-primary" id="" >Send Now</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+         </section>
+
+         <!-- get bonus section -->
+         <section id="get-bonus-box">
+          <div class="hero  ">
+              <div class="hero-content  flex-col lg:flex-row-reverse w-full">
+               
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                  <form class="card-body">
+                    
+                    <div class="form-control">
+                    
+                      <label class="label">
+                          <span class="label-text" >Enter Bonus Coupon</span>
+                        </label>
+                      <input id="" type="text" placeholder="Enter your coupon" class="input input-bordered" required />
+                     
+                    </div>
+                    <div class="form-control mt-6">
+                      <button class="btn btn-primary" id="" >Get Bonus</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+       </section>
+
+       <!-- pay bill section -->
+       <section id="pay-bill-box">
+                    
+        <div class="hero  ">
+            <div class="hero-content  flex-col lg:flex-row-reverse w-full">
+             
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                        <span class="label-text">Select To Pay</span>
+                      </label>
+                    <select class="select select-bordered w-full max-w-xs " required>
+                        <option disabled selected>Select Back</option>
+                        <option>Bkash</option>
+                        <option>Nagad</option>
+                        <option>DBBL</option>
+                      </select>
+
+                    <label class="label">
+                      <span class="label-text">Biller Account Number</span>
+                    </label>
+                    <input   type="number" placeholder="Enter Acount Number" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text" >Amount To Pay</span>
+                    </label>
+                    <input id="" type="number" placeholder="Add Amount To Pay" class="input input-bordered" required />
+                    <label class="label">
+                        <span class="label-text" >Pin Number</span>
+                      </label>
+                    <input id="" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" required />
+                    <!-- <label class="label">
+                      <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                    </label> -->
+                  </div>
+                  <div class="form-control mt-6">
+                    <button class="btn btn-primary" id="" >Pay Now</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+     </section>
+
+     <!-- Transactions section -->
+      <section class="pt-10 " id="transactions-box">
+        <!-- history 1 -->
+        <div tabindex="0" class="collapse collapse-plus border-base-300 bg-base-200 border mb-4">
+          <div class="collapse-title text-sm font-medium flex gap-4">
+            <div class="h-12 w-12 bg-slate-200 flex justify-center items-center rounded-full">
+              <img src="../assets/wallet1.png" alt="" class="h-6 w-6 ">
+            </div>
+           <div>
+            <h1 class="font-bold text-xl">Electricity Bill</h1>
+           <p>Today 01:44 AM</p>
+           </div>
+          </div>
+          <div class="collapse-content">
+            <p>tabindex="0" attribute is necessary to make the div focusable</p>
+          </div>
+        </div>
+
+         <!-- history 2 -->
+         <div tabindex="0" class="collapse collapse-plus border-base-300 bg-base-200 border mb-4">
+          <div class="collapse-title text-sm font-medium flex gap-4">
+            <div class="h-12 w-12 bg-slate-200 flex justify-center items-center rounded-full">
+              <img src="../assets/wallet1.png" alt="" class="h-6 w-6 ">
+            </div>
+           <div>
+            <h1 class="font-bold text-xl">Bank Deposit</h1>
+           <p>Today 01:44 AM</p>
+           </div>
+          </div>
+          <div class="collapse-content">
+            <p>tabindex="0" attribute is necessary to make the div focusable</p>
+          </div>
+        </div>
+
+         <!-- history 3 -->
+         <div tabindex="0" class="collapse collapse-plus border-base-300 bg-base-200 border mb-4">
+          <div class="collapse-title text-sm font-medium flex gap-4">
+            <div class="h-12 w-12 bg-slate-200 flex justify-center items-center rounded-full">
+              <img src="../assets/wallet1.png" alt="" class="h-6 w-6 ">
+            </div>
+           <div>
+            <h1 class="font-bold text-xl">Mobile Recharge</h1>
+           <p>Today 01:44 AM</p>
+           </div>
+          </div>
+          <div class="collapse-content">
+            <p>tabindex="0" attribute is necessary to make the div focusable</p>
+          </div>
+        </div>
+
+         <!-- history 4 -->
+         <div tabindex="0" class="collapse collapse-plus border-base-300 bg-base-200 border mb-4">
+          <div class="collapse-title text-sm font-medium flex gap-4">
+            <div class="h-12 w-12 bg-slate-200 flex justify-center items-center rounded-full">
+              <img src="../assets/wallet1.png" alt="" class="h-6 w-6 ">
+            </div>
+           <div>
+            <h1 class="font-bold text-xl">Gas Bill</h1>
+           <p>Today 01:44 AM</p>
+           </div>
+          </div>
+          <div class="collapse-content">
+            <p>tabindex="0" attribute is necessary to make the div focusable</p>
+          </div>
+        </div>
+      </section>
+        </main>
+
+    </section>
+
+    <script src="../javascript-files/main.js"></script>
+</body>
+</html>
