@@ -86,3 +86,7 @@ document.getElementById("transactions").addEventListener('click', function (even
     handleToggle ('pay-bill-box','none')
     handleToggle ('transactions-box','block')
 })
+
+document.getElementById("log-out").addEventListener("click", function(){
+    window.location.href = "index.html"
+})
