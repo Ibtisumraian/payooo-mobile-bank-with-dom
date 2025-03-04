@@ -19,7 +19,7 @@ document.getElementById("add-money-btn").addEventListener('click', function(even
 })
 
 
-
+// universal
     document.getElementById('cashout-box').style.display = 'none'
     document.getElementById('add-money-box').style.display = 'none'
     document.getElementById('transfer-money-box').style.display = 'none'
